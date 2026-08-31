@@ -1,0 +1,4 @@
+[19-Aug-2025 11:52:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_posts() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/template-parts/main/sidebar/most-popular.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/template-parts/main/sidebar/most-popular.php on line 19

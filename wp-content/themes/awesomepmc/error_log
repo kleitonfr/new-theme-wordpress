@@ -1,0 +1,92 @@
+[22-Oct-2018 15:57:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[23-Oct-2018 23:09:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[16-Nov-2018 12:53:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[28-Nov-2018 12:28:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[28-Nov-2018 12:28:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[28-Nov-2018 12:28:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[28-Nov-2018 12:28:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[06-Dec-2018 18:38:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[06-Dec-2018 18:38:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[06-Dec-2018 18:38:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[06-Dec-2018 18:38:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[18-Feb-2019 20:07:03 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[06-Apr-2019 16:06:39 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[09-Apr-2019 12:21:51 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[09-Apr-2019 12:21:52 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[09-Apr-2019 12:21:55 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[09-Apr-2019 12:21:56 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[18-Oct-2019 17:35:54 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[18-Oct-2019 17:35:54 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[10-Oct-2023 00:49:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[23-Dec-2023 17:07:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[23-Dec-2023 17:13:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[24-Dec-2023 19:50:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[27-Dec-2023 05:24:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[10-Mar-2026 20:17:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[11-May-2026 02:54:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[11-May-2026 02:55:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[11-May-2026 02:55:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
+[04-Aug-2026 21:44:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/carag018/public_html/pmc/wp-content/themes/awesomepmc/index.php on line 1
