@@ -4,44 +4,62 @@
   "settings": {
     "appearanceTools": true,
     "layout": {
-      "contentSize": "1200px",
-      "wideSize": "1440px"
+      "contentSize": "1440px",
+      "wideSize": "1519px"
     },
     "color": {
-      "custom": true,
+      "custom": false,
       "customDuotone": false,
+      "defaultPalette": false,
       "palette": [
-        { "slug": "neutral-50", "name": "Cor de fundo padrão", "color": "#F9FAFA" },
-        { "slug": "neutral-100", "name": "Superficie de cards", "color": "#F2F4F5" },
-        { "slug": "neutral-400", "name": "Texto desabilitado", "color": "#9EA3A9" },
-        { "slug": "neutral-600", "name": "Texto secundário", "color": "#697077" },
-        { "slug": "neutral-800", "name": "Texto terciário", "color": "#383D42" },
-        { "slug": "neutral-800", "name": "Texto primário", "color": "#1C1F22" },
+        { "slug": "bg-default", "name": "Fundo padrão", "color": "#F9FAFA" },
+        { "slug": "bg-surface", "name": "Superfície", "color": "#F2F4F5" },
+        { "slug": "bg-primary", "name": "Fundo primário", "color": "#F4F8FB" },
 
-        { "slug": "primary-900", "name": "Azul Institucional (topo)", "color": "#002F47" },
-        { "slug": "primary-800", "name": "Azul Institucional", "color": "#00517A" },
-        { "slug": "primary-600", "name": "Azul Institucional (fim gradiente)", "color": "#007BBB" },
+        { "slug": "text-primary", "name": "Texto primário", "color": "#1C1F22" },
+        { "slug": "text-secondary", "name": "Texto secundário", "color": "#697077" },
+        { "slug": "text-disabled", "name": "Texto desabilitado", "color": "#9EA3A9" },
 
-        { "slug": "seondary-900", "name": "Texto feedback warning", "color": "#5A4B02" },
-        { "slug": "seondary-600", "name": "Amarelo Institucional", "color": "#F2CB05" },
-        { "slug": "seondary-400", "name": "Amarelo Institucional", "color": "#FCE25F" },
-        { "slug": "seondary-200", "name": "Cor de fundo feedback warning", "color": "#FAEEB2" },
+        { "slug": "action-primary", "name": "Ação primária", "color": "#007BBB" },
+        { "slug": "action-primary-hover", "name": "Ação primária — hover", "color": "#00517A" },
+        { "slug": "action-primary-disabled", "name": "Ação primária — desabilitada", "color": "#B5DAEE" },
 
-        { "slug": "tertiary-50", "name": "Cor de fundo feedback error", "color": "#FCF2F3" },
-        { "slug": "tertiary-600", "name": "Vermelho Institucional", "color": "#D90718" },
-        { "slug": "tertiary-800", "name": "Texto feedback error", "color": "#99000C" },
-        
-        { "slug": "quaternary-50", "name": "Cor de fundo feedback success", "color": "#F1F8F3" },
-        { "slug": "quaternary-600", "name": "Verde Institucional", "color": "#65A675" },
-        { "slug": "quaternary-900", "name": "Texto feedback success", "color": "#183F21" },
-        
-        { "slug": "white", "name": "Branco", "color": "#ffffff" },
+        { "slug": "border-default", "name": "Borda padrão", "color": "#E3E6E8" },
+        { "slug": "border-focus", "name": "Borda de foco", "color": "#F2CB05" },
+
+        { "slug": "primary-50", "name": "Azul institucional 50", "color": "#F4F8FB" },
+        { "slug": "primary-600", "name": "Azul institucional", "color": "#007BBB" },
+        { "slug": "primary-800", "name": "Azul institucional escuro", "color": "#00517A" },
+        { "slug": "primary-900", "name": "Azul institucional profundo", "color": "#002F47" },
+
+        { "slug": "secondary-400", "name": "Amarelo institucional claro", "color": "#FCE25F" },
+        { "slug": "secondary-600", "name": "Amarelo institucional", "color": "#F2CB05" },
+        { "slug": "secondary-900", "name": "Amarelo — texto warning", "color": "#5A4B02" },
+
+        { "slug": "tertiary-600", "name": "Vermelho institucional", "color": "#D90718" },
+        { "slug": "tertiary-800", "name": "Vermelho — texto error", "color": "#99000C" },
+        { "slug": "tertiary-50", "name": "Fundo feedback error", "color": "#FCF2F3" },
+
+        { "slug": "quaternary-600", "name": "Verde institucional", "color": "#65A675" },
+        { "slug": "quaternary-900", "name": "Verde — texto success", "color": "#183F21" },
+        { "slug": "quaternary-50", "name": "Fundo feedback success", "color": "#F1F8F3" },
+
+        { "slug": "feedback-warning-bg", "name": "Fundo feedback warning", "color": "#FAEEB2" },
+        { "slug": "feedback-warning-text", "name": "Texto feedback warning", "color": "#5A4B02" },
+        { "slug": "feedback-info-bg", "name": "Fundo feedback info", "color": "#DFEEF6" },
+        { "slug": "feedback-info-text", "name": "Texto feedback info", "color": "#00517A" },
+        { "slug": "feedback-error-bg", "name": "Fundo feedback error", "color": "#FCF2F3" },
+        { "slug": "feedback-error-text", "name": "Texto feedback error", "color": "#99000C" },
+        { "slug": "feedback-success-bg", "name": "Fundo feedback success", "color": "#F1F8F3" },
+        { "slug": "feedback-success-text", "name": "Texto feedback success", "color": "#183F21" },
+
+        { "slug": "white", "name": "Branco", "color": "#FFFFFF" },
         { "slug": "black", "name": "Preto", "color": "#000000" }
       ],
       "gradients": [
         {
           "slug": "ticker-gradient",
-          "name": "Gradiente do ticker de eventos",
+          "name": "Gradiente institucional",
           "gradient": "linear-gradient(90deg, #00517A 0%, #007BBB 81%)"
         },
         {
@@ -52,55 +70,160 @@
       ]
     },
     "typography": {
-      "customFontSize": true,
+      "customFontSize": false,
       "fontFamilies": [
         {
           "slug": "montserrat",
           "name": "Montserrat",
-          "fontFamily": "'Montserrat', sans-serif",
-          "fontFace": [
-            {
-              "fontFamily": "Montserrat",
-              "fontWeight": "400 800",
-              "fontStyle": "normal",
-              "fontStretch": "normal",
-              "src": ["file:./assets/fonts/Montserrat-VariableFont_wght.ttf"]
-            }
-          ]
+          "fontFamily": "'Montserrat', 'Segoe UI', sans-serif"
+        },
+        {
+          "slug": "inter",
+          "name": "Inter",
+          "fontFamily": "'Inter', 'Segoe UI', sans-serif"
+        },
+        {
+          "slug": "jetbrains-mono",
+          "name": "JetBrains Mono",
+          "fontFamily": "'JetBrains Mono', 'Courier New', monospace"
         }
       ],
       "fontSizes": [
-        { "slug": "xs", "name": "Extra pequeno", "size": "0.75rem" },
-        { "slug": "sm", "name": "Pequeno", "size": "0.875rem" },
-        { "slug": "md", "name": "Médio", "size": "1rem" },
-        { "slug": "lg", "name": "Grande", "size": "1.25rem" },
-        { "slug": "xl", "name": "Extra grande", "size": "1.75rem" },
+        { "slug": "12", "name": "12 px", "size": "0.75rem" },
+        { "slug": "14", "name": "14 px", "size": "0.875rem" },
+        { "slug": "16", "name": "16 px", "size": "1rem" },
+        { "slug": "18", "name": "18 px", "size": "1.125rem" },
+        { "slug": "20", "name": "20 px", "size": "1.25rem" },
+        { "slug": "24", "name": "24 px", "size": "1.5rem" },
+        { "slug": "32", "name": "32 px", "size": "2rem" },
+        { "slug": "40", "name": "40 px", "size": "2.5rem" },
         { "slug": "hero", "name": "Título do banner", "size": "clamp(1.75rem, 3vw, 2.75rem)" }
       ]
     },
     "spacing": {
       "customMargin": true,
       "customPadding": true,
+      "customGap": true,
+      "spacingSizes": [
+        { "slug": "fit-half", "name": "4 px", "size": "4px" },
+        { "slug": "layout-1x", "name": "8 px", "size": "8px" },
+        { "slug": "fit-3x", "name": "12 px", "size": "12px" },
+        { "slug": "layout-2x", "name": "16 px", "size": "16px" },
+        { "slug": "fit-5x", "name": "20 px", "size": "20px" },
+        { "slug": "layout-3x", "name": "24 px", "size": "24px" },
+        { "slug": "fit-7x", "name": "28 px", "size": "28px" },
+        { "slug": "layout-4x", "name": "32 px", "size": "32px" },
+        { "slug": "fit-9x", "name": "36 px", "size": "36px" },
+        { "slug": "layout-5x", "name": "40 px", "size": "40px" },
+        { "slug": "fit-11x", "name": "44 px", "size": "44px" },
+        { "slug": "layout-6x", "name": "48 px", "size": "48px" },
+        { "slug": "layout-7x", "name": "56 px", "size": "56px" },
+        { "slug": "layout-8x", "name": "64 px", "size": "64px" },
+        { "slug": "layout-9x", "name": "72 px", "size": "72px" },
+        { "slug": "layout-10x", "name": "80 px", "size": "80px" }
+      ],
       "units": ["px", "%", "rem", "vh", "vw"]
     },
     "border": {
       "radius": true,
       "width": true
+    },
+    "shadow": {
+      "presets": [
+        { "slug": "elevation-0", "name": "Sem sombra", "shadow": "none" },
+        { "slug": "elevation-1", "name": "Elevação 1", "shadow": "0 1px 1px rgba(28, 31, 34, 0.10)" },
+        { "slug": "elevation-2", "name": "Elevação 2", "shadow": "0 3px 3px rgba(28, 31, 34, 0.16)" },
+        { "slug": "elevation-3", "name": "Elevação 3", "shadow": "0 6px 6px rgba(28, 31, 34, 0.30)" },
+        { "slug": "elevation-4", "name": "Elevação 4", "shadow": "0 9px 9px rgba(28, 31, 34, 0.45)" }
+      ]
     }
   },
   "styles": {
     "color": {
-      "background": "var(--wp--preset--color--white)",
-      "text": "var(--wp--preset--color--primary-800)"
+      "background": "var(--wp--preset--color--bg-default)",
+      "text": "var(--wp--preset--color--text-primary)"
     },
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--montserrat)",
-      "fontSize": "var(--wp--preset--font-size--md)"
+      "fontFamily": "var(--wp--preset--font-family--inter)",
+      "fontSize": "var(--wp--preset--font-size--16)",
+      "fontStyle": "normal",
+      "fontWeight": "400",
+      "lineHeight": "1.5"
     },
     "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontWeight": "700",
+          "lineHeight": "1.2"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--text-primary)"
+        }
+      },
       "link": {
-        "color": { "text": "var(--wp--preset--color--primary-800)" },
-        ":hover": { "color": { "text": "var(--wp--preset--color--primary-600)" } }
+        "color": {
+          "text": "var(--wp--preset--color--action-primary)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--action-primary-hover)"
+          }
+        },
+        ":focus": {
+          "color": {
+            "text": "var(--wp--preset--color--text-primary)"
+          },
+          "outline": {
+            "color": "var(--wp--preset--color--border-focus)",
+            "offset": "2px",
+            "style": "solid",
+            "width": "2px"
+          }
+        }
+      },
+      "button": {
+        "border": {
+          "radius": "8px"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontWeight": "600",
+          "lineHeight": "1.5"
+        }
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "color": {
+          "background": "var(--wp--preset--color--action-primary)",
+          "text": "var(--wp--preset--color--white)"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--action-primary-hover)",
+            "text": "var(--wp--preset--color--white)"
+          }
+        },
+        ":focus": {
+          "outline": {
+            "color": "var(--wp--preset--color--border-focus)",
+            "offset": "2px",
+            "style": "solid",
+            "width": "2px"
+          }
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--montserrat)",
+          "fontWeight": "700"
+        }
+      },
+      "core/search": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        }
       }
     }
   },
