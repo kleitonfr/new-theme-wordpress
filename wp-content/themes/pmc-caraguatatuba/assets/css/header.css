@@ -1,0 +1,291 @@
+/* =========================================================
+   Header + Banner — Portal Prefeitura de Caraguatatuba
+   Reprodução do frame "header+banner" (Figma: Portal Prefeitura)
+   Usa os design tokens de theme.json via var(--wp--preset--*)
+   ========================================================= */
+
+.caragua-header-wrapper {
+	max-width: none !important;
+	padding: 0 !important;
+}
+
+/* ---------- Barra de utilidades (topo) ---------- */
+.caragua-utility-bar {
+	background: var(--wp--preset--color--navy-900);
+	color: var(--wp--preset--color--white);
+	padding: 8px 89px;
+	font-size: var(--wp--preset--font-size--xs);
+	letter-spacing: 0.04em;
+}
+
+.caragua-utility-bar__links {
+	gap: 24px;
+}
+
+.caragua-utility-bar__item a,
+.caragua-utility-bar__portals a {
+	color: var(--wp--preset--color--white);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.caragua-utility-bar__item a:hover,
+.caragua-utility-bar__portals a:hover {
+	text-decoration: underline;
+}
+
+.caragua-utility-bar__item--badge a {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--navy-900);
+	border-radius: 999px;
+	padding: 2px 10px;
+	font-weight: 800;
+}
+
+/* ---------- Cabeçalho principal (logo, busca, menu) ---------- */
+.caragua-main-header {
+	padding: 16px 89px;
+	background: var(--wp--preset--color--white);
+	gap: 32px;
+}
+
+.caragua-brand {
+	gap: 16px;
+	align-items: center;
+}
+
+.caragua-brand__logo img {
+	border-radius: 999px;
+	border: 3px solid var(--wp--preset--color--surface-100);
+}
+
+.caragua-brand__title {
+	font-family: var(--wp--preset--font-family--montserrat);
+	font-weight: 800;
+	font-size: var(--wp--preset--font-size--lg);
+	color: var(--wp--preset--color--navy-800);
+	margin: 0;
+	line-height: 1.2;
+}
+
+.caragua-brand__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.caragua-brand__tagline {
+	font-size: var(--wp--preset--font-size--xs);
+	color: #6b7280;
+	margin: 0;
+}
+
+/* Campo de busca (pill) */
+.caragua-search {
+	flex: 1 1 552px;
+	max-width: 552px;
+}
+
+.caragua-search .wp-block-search__inside-wrapper {
+	background: var(--wp--preset--color--surface-50);
+	border: 1px solid rgba(97, 92, 92, 0.2);
+	border-radius: 999px;
+	overflow: hidden;
+}
+
+.caragua-search .wp-block-search__input {
+	border: none;
+	background: transparent;
+	padding-left: 20px;
+}
+
+.caragua-search .wp-block-search__button {
+	background: var(--wp--preset--color--navy-800);
+	border-radius: 999px;
+	margin: 4px;
+}
+
+/* Menu principal */
+.caragua-nav {
+	gap: 4px;
+	font-family: var(--wp--preset--font-family--montserrat);
+	font-weight: 800;
+	font-size: var(--wp--preset--font-size--xs);
+	text-transform: none;
+}
+
+.caragua-nav a {
+	display: inline-block;
+	padding: 10px 18px;
+	border-radius: 999px;
+	color: var(--wp--preset--color--navy-800);
+	text-decoration: none;
+}
+
+.caragua-nav a:hover {
+	background: var(--wp--preset--color--surface-100);
+}
+
+.caragua-nav .is-active a,
+.caragua-nav a.is-active {
+	background: var(--wp--preset--color--surface-100);
+	color: var(--wp--preset--color--navy-800);
+}
+
+/* ---------- Ticker de eventos ---------- */
+.caragua-ticker {
+	background: var(--wp--preset--gradient--ticker-gradient);
+	color: var(--wp--preset--color--white);
+	padding: 12px 89px;
+	gap: 32px;
+	overflow-x: auto;
+}
+
+.caragua-ticker__label {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--navy-900);
+	font-weight: 800;
+	font-size: var(--wp--preset--font-size--sm);
+	padding: 6px 16px;
+	border-radius: 999px;
+	white-space: nowrap;
+	margin: 0;
+}
+
+.caragua-ticker__list {
+	gap: 24px;
+}
+
+.caragua-ticker__item {
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 999px;
+	padding: 6px 16px 6px 6px;
+	gap: 10px;
+	white-space: nowrap;
+}
+
+.caragua-ticker__date {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--navy-900);
+	font-weight: 800;
+	font-size: var(--wp--preset--font-size--xs);
+	padding: 6px 12px;
+	border-radius: 999px;
+	margin: 0;
+}
+
+.caragua-ticker__title {
+	font-size: var(--wp--preset--font-size--xs);
+	margin: 0;
+}
+
+/* ---------- Banner / carrossel hero ---------- */
+.caragua-hero {
+	position: relative;
+	isolation: isolate;
+}
+
+.caragua-hero__slide {
+	display: none;
+}
+
+.caragua-hero__slide.is-active {
+	display: flex;
+}
+
+.caragua-hero__slide .wp-block-cover__inner-container {
+	max-width: 620px;
+	margin-left: 89px;
+	align-items: flex-start;
+	text-align: left;
+}
+
+.caragua-hero__eyebrow {
+	background: rgba(255, 255, 255, 0.15);
+	color: var(--wp--preset--color--white);
+	font-weight: 800;
+	font-size: var(--wp--preset--font-size--sm);
+	padding: 6px 16px;
+	border-radius: 999px;
+	display: inline-block;
+}
+
+.caragua-hero__title {
+	color: var(--wp--preset--color--white);
+	font-size: var(--wp--preset--font-size--hero);
+	font-weight: 800;
+	margin: 12px 0;
+}
+
+.caragua-hero__desc {
+	color: var(--wp--preset--color--white);
+	font-size: var(--wp--preset--font-size--md);
+	max-width: 480px;
+}
+
+.caragua-hero__cta .wp-block-button__link {
+	background: transparent;
+	border: 2px solid var(--wp--preset--color--white);
+	color: var(--wp--preset--color--white);
+	border-radius: 999px;
+	font-weight: 700;
+}
+
+.caragua-hero__cta .wp-block-button__link:hover {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--navy-900);
+}
+
+.caragua-hero__dots {
+	position: absolute;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8px;
+	z-index: 2;
+}
+
+.caragua-hero__dot {
+	width: 11px;
+	height: 11px;
+	border-radius: 999px;
+	border: none;
+	background: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+	padding: 0;
+}
+
+.caragua-hero__dot.is-active {
+	background: var(--wp--preset--color--white);
+	width: 27px;
+	border-radius: 999px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 782px) {
+	.caragua-utility-bar,
+	.caragua-main-header,
+	.caragua-ticker {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.caragua-utility-bar__links {
+		display: none; /* prioriza os portais em telas pequenas */
+	}
+
+	.caragua-main-header {
+		flex-wrap: wrap;
+	}
+
+	.caragua-search {
+		order: 3;
+		max-width: 100%;
+		flex-basis: 100%;
+	}
+
+	.caragua-hero__slide .wp-block-cover__inner-container {
+		margin-left: 20px;
+		max-width: calc(100% - 40px);
+	}
+}

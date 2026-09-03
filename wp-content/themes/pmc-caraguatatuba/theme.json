@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1440px"
+    },
+    "color": {
+      "custom": true,
+      "customDuotone": false,
+      "palette": [
+        { "slug": "neutral-50", "name": "Cor de fundo padrão", "color": "#F9FAFA" },
+        { "slug": "neutral-100", "name": "Superficie de cards", "color": "#F2F4F5" },
+        { "slug": "neutral-400", "name": "Texto desabilitado", "color": "#9EA3A9" },
+        { "slug": "neutral-600", "name": "Texto secundário", "color": "#697077" },
+        { "slug": "neutral-800", "name": "Texto terciário", "color": "#383D42" },
+        { "slug": "neutral-800", "name": "Texto primário", "color": "#1C1F22" },
+
+        { "slug": "primary-900", "name": "Azul Institucional (topo)", "color": "#002F47" },
+        { "slug": "primary-800", "name": "Azul Institucional", "color": "#00517A" },
+        { "slug": "primary-600", "name": "Azul Institucional (fim gradiente)", "color": "#007BBB" },
+
+        { "slug": "seondary-900", "name": "Texto feedback warning", "color": "#5A4B02" },
+        { "slug": "seondary-600", "name": "Amarelo Institucional", "color": "#F2CB05" },
+        { "slug": "seondary-400", "name": "Amarelo Institucional", "color": "#FCE25F" },
+        { "slug": "seondary-200", "name": "Cor de fundo feedback warning", "color": "#FAEEB2" },
+
+        { "slug": "tertiary-50", "name": "Cor de fundo feedback error", "color": "#FCF2F3" },
+        { "slug": "tertiary-600", "name": "Vermelho Institucional", "color": "#D90718" },
+        { "slug": "tertiary-800", "name": "Texto feedback error", "color": "#99000C" },
+        
+        { "slug": "quaternary-50", "name": "Cor de fundo feedback success", "color": "#F1F8F3" },
+        { "slug": "quaternary-600", "name": "Verde Institucional", "color": "#65A675" },
+        { "slug": "quaternary-900", "name": "Texto feedback success", "color": "#183F21" },
+        
+        { "slug": "white", "name": "Branco", "color": "#ffffff" },
+        { "slug": "black", "name": "Preto", "color": "#000000" }
+      ],
+      "gradients": [
+        {
+          "slug": "ticker-gradient",
+          "name": "Gradiente do ticker de eventos",
+          "gradient": "linear-gradient(90deg, #00517A 0%, #007BBB 81%)"
+        },
+        {
+          "slug": "hero-overlay",
+          "name": "Overlay do banner principal",
+          "gradient": "linear-gradient(65deg, #00517A 45%, #007BBB 93%)"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "fontFamilies": [
+        {
+          "slug": "montserrat",
+          "name": "Montserrat",
+          "fontFamily": "'Montserrat', sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Montserrat",
+              "fontWeight": "400 800",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/Montserrat-VariableFont_wght.ttf"]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        { "slug": "xs", "name": "Extra pequeno", "size": "0.75rem" },
+        { "slug": "sm", "name": "Pequeno", "size": "0.875rem" },
+        { "slug": "md", "name": "Médio", "size": "1rem" },
+        { "slug": "lg", "name": "Grande", "size": "1.25rem" },
+        { "slug": "xl", "name": "Extra grande", "size": "1.75rem" },
+        { "slug": "hero", "name": "Título do banner", "size": "clamp(1.75rem, 3vw, 2.75rem)" }
+      ]
+    },
+    "spacing": {
+      "customMargin": true,
+      "customPadding": true,
+      "units": ["px", "%", "rem", "vh", "vw"]
+    },
+    "border": {
+      "radius": true,
+      "width": true
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--white)",
+      "text": "var(--wp--preset--color--primary-800)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--montserrat)",
+      "fontSize": "var(--wp--preset--font-size--md)"
+    },
+    "elements": {
+      "link": {
+        "color": { "text": "var(--wp--preset--color--primary-800)" },
+        ":hover": { "color": { "text": "var(--wp--preset--color--primary-600)" } }
+      }
+    }
+  },
+  "templateParts": [
+    { "name": "header", "area": "header" },
+    { "name": "footer", "area": "footer" }
+  ]
+}
