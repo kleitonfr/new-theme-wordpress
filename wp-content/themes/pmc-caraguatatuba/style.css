@@ -3,21 +3,16 @@ Theme Name: Prefeitura de Caraguatatuba
 Theme URI: https://www.caraguatatuba.sp.gov.br
 Author: Secretaria de Tecnologia da Informação e Inovação
 Author URI: https://www.caraguatatuba.sp.gov.br
-Description: Block theme (FSE) do Portal da Prefeitura Municipal de Caraguatatuba. Reprodução do layout definido no Figma "Portal Prefeitura".
+Description: Block theme (FSE) do Portal da Prefeitura Municipal de Caraguatatuba, baseado no Design System STII e no layout Portal Prefeitura.
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 8.0
-Version: 0.1.0
+Version: 0.2.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pmc-caraguatatuba
 Tags: block-theme, full-site-editing, government, custom-colors, custom-logo
- 
-Este arquivo cuida apenas dos metadados do tema (exigência do WordPress).
-O estilo estrutural fica em theme.json e o estilo específico do header
-está isolado em assets/css/header.css (enfileirado via functions.php),
-para manter o FSE (theme.json) como fonte única de verdade de design
-tokens e o CSS solto só para o que os blocos nativos não cobrem
-(marquee do carrossel, ticker, dots etc.).
+
+O design system fica centralizado em theme.json. Os estilos complementares do portal
+ficam em assets/css/portal.css e os comportamentos interativos em assets/js/portal.js.
 */
- 
