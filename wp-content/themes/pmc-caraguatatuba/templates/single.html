@@ -1,0 +1,14 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"64px","bottom":"64px"}}}} -->
+<main class="wp-block-group">
+<!-- wp:post-terms {"term":"category","fontSize":"14"} /-->
+<!-- wp:post-title {"level":1,"fontSize":"32"} /-->
+<!-- wp:post-featured-image {"isLink":false,"align":"wide"} /-->
+<!-- wp:post-date {"fontSize":"14"} /-->
+<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:separator /-->
+<!-- wp:heading {"level":2,"fontSize":"24"} --><h2 class="wp-block-heading has-24-font-size">Notícias relacionadas</h2><!-- /wp:heading -->
+<!-- wp:query {"query":{"perPage":3,"postType":"post","order":"desc","orderBy":"date"},"displayLayout":{"type":"flex","columns":3}} --><div class="wp-block-query"><!-- wp:post-template --><!-- wp:post-featured-image {"isLink":true} /--><!-- wp:post-title {"isLink":true,"fontSize":"18"} /--><!-- wp:post-date {"fontSize":"12"} /--><!-- /wp:post-template --></div><!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
