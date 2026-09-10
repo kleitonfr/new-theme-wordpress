@@ -6,11 +6,12 @@
 	<div style="height:var(--wp--preset--spacing--layout-8x)" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 
-	<!-- wp:query {"queryId":1,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true},"layout":{"type":"default"}} -->
+	<!-- wp:query-title {"type":"search","level":1,"fontSize":"32"} /-->
+
+	<!-- wp:query {"queryId":2,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true},"layout":{"type":"default"}} -->
 	<div class="wp-block-query">
 		<!-- wp:post-template -->
 			<!-- wp:post-title {"isLink":true,"level":2,"fontSize":"24"} /-->
-			<!-- wp:post-date {"fontSize":"14","textColor":"text-secondary"} /-->
 			<!-- wp:post-excerpt /-->
 		<!-- /wp:post-template -->
 
@@ -22,7 +23,7 @@
 
 		<!-- wp:query-no-results -->
 			<!-- wp:paragraph -->
-			<p>Nenhum conteúdo encontrado.</p>
+			<p>Nenhum resultado para a sua busca. Tente outros termos.</p>
 			<!-- /wp:paragraph -->
 		<!-- /wp:query-no-results -->
 	</div>

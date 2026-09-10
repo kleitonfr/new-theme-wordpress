@@ -1,99 +1,177 @@
-# Tema PMC Caraguatatuba
+# PMC Caraguatatuba — Block Theme
 
-Block Theme (FSE) do Portal da Prefeitura Municipal de Caraguatatuba, baseado no
-Design System STII e no layout "Portal Prefeitura" do Figma.
+Tema WordPress Block Theme nativo do portal institucional da Prefeitura Municipal de
+Caraguatatuba. Esta versão entrega o **header em três faixas** e o **hero de destaques**.
 
-> Para **onde alterar cada coisa**, leia `README-THEME-ARCHITECTURE.md`.
-> Para o **histórico da implementação do design**, leia `README-DESIGN-IMPLEMENTATION.md`.
+- **Versão:** 1.0.0
+- **Requer:** WordPress 6.5+, PHP 8.0+
+- **Design tokens:** `theme.json` (Design System STII) — fonte oficial e única
+
+---
 
 ## Estrutura
 
 ```
 pmc-caraguatatuba/
-├── style.css                       → metadados obrigatórios do tema
-├── theme.json                      → design tokens (fonte oficial) + fontFace
-├── functions.php                   → theme supports + enqueue de CSS/JS
+├── style.css                      identificação do tema (sem regras de estilo)
+├── theme.json                     ← FONTE OFICIAL DOS DESIGN TOKENS
+├── functions.php                  suportes, enfileiramento, categoria de padrões
+├── screenshot.png                 miniatura em Aparência → Temas
+│
 ├── templates/
-│   ├── front-page.html             → Home: header → hero → seções → footer
-│   ├── index.html                  → fallback
-│   └── single.html                 → notícia/artigo
+│   ├── front-page.html            header + hero
+│   ├── index.html                 listagem
+│   ├── page.html   single.html
+│   ├── search.html 404.html
+│
 ├── parts/
-│   ├── header.html                 → compositor: utility + main + eventos
-│   ├── header-utility.html         → barra institucional superior
-│   ├── header-main.html            → marca, busca e navegação
-│   ├── header-brand.html           → brasão + identidade
-│   ├── events-ticker.html          → faixa de eventos
-│   └── footer.html                 → rodapé
+│   ├── header.html                ← UM único <header>, composto por 3 faixas
+│   └── footer.html
+│
 ├── patterns/
-│   ├── header-hero.php             → cabeçalho completo (registro no inserter)
-│   ├── hero.php                    → carrossel de destaques
-│   ├── portal-section.php          → portais Cidadão/Empreendedor/Servidor
-│   ├── service-card.php            → card de serviço
-│   ├── news-section.php            → notícias (core/query)
-│   ├── media-section.php           → vídeos e galeria
-│   └── government-section.php      → governo municipal
+│   ├── header-utility.php         faixa 1 — links institucionais e portais
+│   ├── header-main.php            faixa 2 — marca, busca e navegação
+│   ├── header-brand.php           componente: brasão + nome do município
+│   ├── header-search.php          componente: busca com seletor de escopo
+│   ├── events-ticker.php          faixa 3 — EVENTOS
+│   ├── hero.php                   banner de destaques (3 slides)
+│   └── header-hero.php            conjunto header + hero para novos templates
+│
 └── assets/
-    ├── css/portal.css              → exceções estruturais/visuais (carregado)
-    ├── css/header.css              → LEGADO, não carregado — ver aviso abaixo
-    ├── js/portal.js                → carrossel do hero (carregado)
-    ├── js/header.js                → LEGADO, não carregado — ver aviso abaixo
-    ├── fonts/                      → Montserrat e Inter (ver fonts/README.md)
-    └── img/                        → brasão e peças do hero
+    ├── css/portal.css             CSS estrutural (sem tokens próprios)
+    ├── js/portal.js               carrossel do hero
+    ├── img/                       ⚠ imagens PROVISÓRIAS — ver assets/img/README.md
+    └── fonts/                     ⚠ fontes ausentes — ver assets/fonts/README.md
 ```
 
-## Estrutura do cabeçalho
+### Por que o header é uma template part e as faixas são patterns
 
-`parts/header.html` é apenas um compositor e emite **um único `<header>`**:
+O elemento `<header>` é emitido **uma única vez**, pelo bloco `core/template-part`
+com `area: header`. Por isso o invólucro dentro de `parts/header.html` é uma `<div>`:
+se fosse `<header>`, o resultado seria `<header>` dentro de `<header>`.
 
+As três faixas são patterns PHP, e não parts, por dois motivos:
+
+1. um arquivo `.html` de template part não executa PHP e, portanto, não resolve
+   `home_url()`, escape nem tradução — necessários em links, formulário de busca e
+   rótulos;
+2. pela regra 6 do projeto, `patterns/` é o lugar de seções e componentes
+   reutilizáveis; `parts/` é o lugar de regiões do tema (header, footer).
+
+---
+
+## Header
+
+### Faixa 1 — utilidades (`header-utility.php`)
+
+Fundo `primary-900`. À esquerda os links institucionais, à direita os portais,
+separados por `|`. Tipografia Montserrat 12 px, caixa alta, `letter-spacing .08em`.
+
+### Faixa 2 — principal (`header-main.php`)
+
+Fundo branco. Três blocos em linha: marca, busca e navegação.
+
+**Busca.** O bloco `core/search` não tem seletor de escopo. Como o Design System
+prevê "Esta página / Todo o site" como controle **funcional**, a busca é um
+formulário próprio dentro de um bloco `core/html` — e não uma decoração sobreposta
+ao bloco nativo. O escopo chega no parâmetro `escopo`; para fazê-lo agir, trate-o
+em `pre_get_posts`:
+
+```php
+add_action( 'pre_get_posts', function ( $query ) {
+	if ( ! $query->is_search() || ! $query->is_main_query() || is_admin() ) {
+		return;
+	}
+
+	if ( isset( $_GET['escopo'] ) && 'pagina' === $_GET['escopo'] ) {
+		// restrinja aqui o post_type / post_parent conforme a regra do portal
+	}
+} );
 ```
-header.html
-  ├── header-utility.html   → barra institucional (links + portais)
-  ├── header-main.html      → marca + busca + navegação
-  │     └── header-brand.html
-  └── events-ticker.html    → faixa de eventos
-```
 
-Não existem cabeçalhos alternativos. Para alterar uma região, edite o part
-correspondente — não duplique o header.
+**Navegação.** Bloco `core/navigation` nativo, com os cinco itens padrão já na
+marcação — assim o menu renderiza mesmo antes de um menu ser cadastrado. Para
+gerenciá-lo pelo Site Editor: **Aparência → Editor → Navegação**.
+
+O menu sobreposto do `core/navigation` troca em 600 px por padrão; o portal precisa
+dele até 1280 px, onde a navegação horizontal deixa de caber. Três regras em
+`portal.css` (seção 3) estendem esse comportamento.
+
+### Faixa 3 — eventos (`events-ticker.php`)
+
+Gradiente `ticker-gradient`, rótulo EVENTOS em `secondary-600` e lista horizontal
+rolável. O conteúdo está no array `$pmc_eventos` no topo do arquivo, isolado
+justamente para que a troca por uma consulta (CPT `evento`) não exija tocar na
+marcação.
+
+---
 
 ## Hero
 
-`patterns/hero.php` é um carrossel de destaques em modelo **híbrido**:
+Cinco camadas sobrepostas:
 
-- a peça gráfica aparece **inteira**, sem corte e **sem texto sobreposto**
-  (as artes já trazem título, botão e brasão embutidos);
-- o título, a descrição e o CTA editáveis do WordPress ficam na **faixa abaixo**
-  da imagem;
-- `assets/js/portal.js` controla a troca de slides (autoplay 6 s, pausa no hover
-  e no foco, respeita `prefers-reduced-motion`).
+| z | Camada | Origem |
+|---|---|---|
+| 1 | `.pmc-hero__strip` — faixa fotográfica no topo | CSS, decorativa |
+| — | arte de fundo | CSS, no próprio `.pmc-hero` |
+| 2 | `.pmc-hero__veil` — véu azul da esquerda | CSS, decorativa |
+| 3 | `.pmc-hero__slide` — tag, título, texto e CTA | **blocos nativos, editáveis** |
+| 4 | `.pmc-hero__dots` — controles do carrossel | `core/html` |
 
-As imagens vivem em `assets/img/` e são referenciadas via `get_theme_file_uri()`.
+As camadas decorativas vêm de CSS porque os caminhos das imagens ficam
+centralizados em três variáveis no topo do `portal.css` — trocar as artes não exige
+tocar em nenhum outro arquivo.
 
-## ⚠️ Arquivos legados
+O primeiro destaque usa `<h1>`; os demais usam `<h2>` com a mesma classe, para não
+haver mais de um `<h1>` no documento.
 
-`assets/css/header.css` e `assets/js/header.js` são de uma etapa anterior,
-**não são carregados** pelo `functions.php` e referenciam tokens que não existem
-mais no `theme.json` (`navy-900`, `blue-700`, `surface-100`, `font-size--xs`).
-Mantidos apenas como referência histórica. **Não adicione estilos neles** e não
-os enfileire — o `header.js` implementa um carrossel concorrente ao do
-`portal.js` e os dois juntos causariam conflito.
+**Carrossel** (`assets/js/portal.js`): autoplay de 6 s, pausa no hover, no foco de
+teclado e quando a aba perde visibilidade; desligado sob
+`prefers-reduced-motion: reduce`.
 
-## Instalação
+---
 
-1. Copie a pasta `pmc-caraguatatuba/` para `wp-content/themes/`.
-2. Ative o tema em **Aparência → Temas**.
-3. Adicione as fontes em `assets/fonts/` (veja `assets/fonts/README.md`).
-4. Em **Aparência → Personalizar → Identidade do Site**, envie
-   `assets/img/brasao.jpg` como logotipo e defina o título "Caraguatatuba".
-5. Em **Aparência → Editor → Navegação**, crie o menu principal
-   (Início, Notícias, Serviços, Galeria, Unidades).
+## Regras que este tema segue
+
+1. `theme.json` é a fonte oficial dos tokens — **não foi alterado**.
+2. Nenhum token novo de cor, fonte, tamanho, espaçamento, raio ou sombra foi criado.
+3. `portal.css` não contém **nenhuma cor literal**. As poucas transparências que a
+   paleta não expressa (véu do hero, divisores sobre azul) são derivadas dos próprios
+   tokens com `color-mix()`, com fallback declarado antes para navegadores antigos.
+4. Medidas sem token equivalente — `min-height` do hero, 52/56 px do brasão, 10 px
+   dos dots — usam px diretamente e estão comentadas. Alturas compostas usam
+   `calc()` sobre os presets (ex.: faixa do hero = `layout-8x × 2` = 128 px).
+
+Validação executada nesta entrega: nenhuma referência a token inexistente em
+`portal.css` nem nos atributos de bloco, e nenhum `#hex` no CSS.
+
+---
 
 ## Pendências conhecidas
 
-- **Resolução das peças do hero**: as artes atuais têm 719–825 px de largura.
-  O CSS limita a exibição a 1040 px para não borrar; para ocupar toda a largura
-  do container (1440 px) com nitidez, reexporte a ≥ 1650 px.
-- **Escopo da busca**: o seletor "Esta página / Todo o site" do layout não existe
-  no bloco `core/search` e não foi implementado.
-- **Conteúdo dinâmico**: eventos, slides do hero, serviços e links de secretarias
-  ainda são estáticos e devem vir de uma fonte administrável.
+1. **Imagens provisórias** — `assets/img/README.md` explica como substituir.
+2. **Fontes ausentes** — `assets/fonts/README.md` explica como obter Montserrat e
+   Inter. Até lá o tema usa o fallback `Segoe UI` declarado no `theme.json`.
+3. **Conteúdo estático** — eventos e slides do hero estão em arrays PHP; a troca por
+   CPT é o próximo passo.
+4. **Escopo da busca** — o seletor envia `escopo`, mas ainda não filtra: falta a
+   regra em `pre_get_posts` (modelo acima).
+5. **Tamanho do título do hero** — o token `hero` do `theme.json` limita em
+   `clamp(1.75rem, 3vw, 2.75rem)` = 44 px. O protótipo Lovable usa 58 px. Mantido o
+   token; ajustar exige decisão sobre o Design System.
+
+---
+
+## Como validar no WordPress Studio
+
+1. Copie a pasta para `wp-content/themes/` e ative em **Aparência → Temas**.
+2. Abra a home em **1600 px** e compare com a referência visual.
+3. Repita em **1280, 1024, 768 e 430 px** — não deve haver rolagem horizontal.
+   (Verificado nesta entrega nos quatro tamanhos.)
+4. **Hero:** confirme que os dots trocam os três destaques, que o autoplay pausa no
+   hover e que para com `prefers-reduced-motion: reduce`.
+5. **Teclado:** navegue com Tab pelo header inteiro; o foco deve mostrar contorno
+   amarelo (`border-focus`) em links, botões, `select` e campo de busca.
+6. **Site Editor → Padrões → Portal Caraguatatuba:** confirme que "Cabeçalho do
+   Portal + Hero" insere um único `<header>` (inspecione o HTML).
+7. **Busca:** envie o formulário e confirme que a URL traz `?escopo=…&s=…`.

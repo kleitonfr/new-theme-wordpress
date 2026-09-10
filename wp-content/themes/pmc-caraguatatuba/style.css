@@ -1,18 +1,23 @@
 /*
-Theme Name: Prefeitura de Caraguatatuba
-Theme URI: https://www.caraguatatuba.sp.gov.br
-Author: Secretaria de Tecnologia da Informação e Inovação
-Author URI: https://www.caraguatatuba.sp.gov.br
-Description: Block theme (FSE) do Portal da Prefeitura Municipal de Caraguatatuba, baseado no Design System STII e no layout Portal Prefeitura.
-Requires at least: 6.4
-Tested up to: 6.7
+Theme Name: PMC Caraguatatuba
+Theme URI: https://www.caraguatatuba.sp.gov.br/
+Author: Secretaria de Tecnologia da Informação e Inovação (STII) — Prefeitura Municipal de Caraguatatuba
+Author URI: https://www.caraguatatuba.sp.gov.br/
+Description: Block Theme institucional do portal da Prefeitura Municipal de Caraguatatuba. Design tokens definidos em theme.json (Design System STII).
+Requires at least: 6.5
+Tested up to: 6.8
 Requires PHP: 8.0
-Version: 0.2.0
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pmc-caraguatatuba
-Tags: block-theme, full-site-editing, government, custom-colors, custom-logo
+Tags: full-site-editing, block-patterns, blog, news, government, one-column, wide-blocks, accessibility-ready
+*/
 
-O design system fica centralizado em theme.json. Os estilos complementares do portal
-ficam em assets/css/portal.css e os comportamentos interativos em assets/js/portal.js.
+/*
+  Este arquivo existe apenas para identificar o tema no WordPress.
+  Toda a estilização vem de:
+    - theme.json                → design tokens e estilos globais (fonte oficial)
+    - assets/css/portal.css     → CSS estrutural que o theme.json não consegue expressar
+  Não adicione regras de estilo aqui.
 */

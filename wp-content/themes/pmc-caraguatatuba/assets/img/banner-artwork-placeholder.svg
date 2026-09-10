@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Arte de fundo provisória do banner">
+  <!--
+    IMAGEM PROVISÓRIA — substituir por assets/img/banner-artwork.jpg
+    (arte oficial da campanha, exportada em 1600x900 ou maior).
+    Formas abstratas genéricas: não reproduz nenhuma marca.
+    Ver assets/img/README.md.
+  -->
+  <defs>
+    <linearGradient id="artBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#F4F8FB"/>
+      <stop offset="60%" stop-color="#EDF1F8"/>
+      <stop offset="100%" stop-color="#F9FAFA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#artBg)"/>
+
+  <!-- massa azul institucional inferior esquerda -->
+  <path d="M-40 470 C 180 380, 340 560, 520 520 C 700 480, 780 620, 700 720 C 620 820, 300 900, 60 880 C -60 870, -80 640, -40 470 Z"
+        fill="#00517A" opacity="0.92"/>
+
+  <!-- massa azul média -->
+  <path d="M120 640 C 320 560, 520 700, 760 660 C 980 624, 1140 760, 1080 880 L 120 900 Z"
+        fill="#007BBB" opacity="0.88"/>
+
+  <!-- forma roxa -->
+  <path d="M700 760 C 820 690, 1020 720, 1120 800 C 1200 866, 1160 900, 1040 900 L 700 900 Z"
+        fill="#4B3A8C" opacity="0.90"/>
+
+  <!-- forma cinza -->
+  <path d="M420 700 C 500 640, 620 660, 660 740 C 700 820, 600 860, 500 830 C 420 806, 380 744, 420 700 Z"
+        fill="#697077" opacity="0.75"/>
+
+  <!-- arco amarelo direita -->
+  <path d="M1600 560 C 1440 560, 1330 690, 1360 820 C 1380 900, 1500 900, 1600 900 Z"
+        fill="#F2CB05" opacity="0.95"/>
+
+  <!-- respingo azul claro direita -->
+  <path d="M1600 380 C 1480 360, 1400 440, 1440 520 C 1476 590, 1600 570, 1600 570 Z"
+        fill="#5BC0EB" opacity="0.85"/>
+
+  <!-- bolhas -->
+  <circle cx="1000" cy="700" r="52" fill="#007BBB" opacity="0.55"/>
+  <circle cx="880"  cy="820" r="34" fill="#5BC0EB" opacity="0.60"/>
+  <circle cx="1200" cy="640" r="26" fill="#F2CB05" opacity="0.70"/>
+  <circle cx="300"  cy="560" r="40" fill="#5BC0EB" opacity="0.35"/>
+
+  <!-- marca discreta de conteúdo provisório -->
+  <g opacity="0.5">
+    <rect x="1332" y="26" width="232" height="34" rx="17" fill="#1C1F22" opacity="0.45"/>
+    <text x="1448" y="49" text-anchor="middle"
+          font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700"
+          letter-spacing="1.6" fill="#FFFFFF">IMAGEM PROVISÓRIA</text>
+  </g>
+</svg>

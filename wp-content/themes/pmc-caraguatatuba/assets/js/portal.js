@@ -1,38 +1,127 @@
-(function () {
+/**
+ * PMC Caraguatatuba — comportamentos do portal.
+ *
+ * Escopo atual: apenas o carrossel do hero. O restante do header é HTML e CSS;
+ * o menu sobreposto da navegação é responsabilidade do bloco core/navigation.
+ *
+ * Contrato de marcação (ver patterns/hero.php):
+ *   .pmc-hero            raiz
+ *   .pmc-hero__slide     slides; o visível tem .is-active
+ *   .pmc-hero__dot       controles; data-pmc-dot = índice; o ativo tem .is-active
+ */
+
+( function () {
 	'use strict';
 
-	document.addEventListener('DOMContentLoaded', function () {
-		document.querySelectorAll('[data-pmc-carousel]').forEach(function (carousel) {
-			var slides = carousel.querySelectorAll('[data-pmc-slide]');
-			var dots = carousel.querySelectorAll('[data-pmc-dot]');
-			var current = 0;
-			var timer = null;
-			if (slides.length < 2) return;
+	var AUTOPLAY_MS = 6000;
 
-			function show(index) {
-				slides[current].hidden = true;
-				if (dots[current]) dots[current].setAttribute('aria-selected', 'false');
-				current = (index + slides.length) % slides.length;
-				slides[current].hidden = false;
-				if (dots[current]) dots[current].setAttribute('aria-selected', 'true');
-			}
+	function reducedMotion() {
+		return window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
+	}
 
-			function stop() { if (timer) window.clearInterval(timer); timer = null; }
-			function start() {
-				stop();
-				if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-					timer = window.setInterval(function () { show(current + 1); }, 6000);
+	function initHero( hero ) {
+		var slides = Array.prototype.slice.call( hero.querySelectorAll( '.pmc-hero__slide' ) );
+		var dots = Array.prototype.slice.call( hero.querySelectorAll( '.pmc-hero__dot' ) );
+
+		if ( slides.length < 2 ) {
+			return;
+		}
+
+		var current = Math.max( 0, slides.findIndex( function ( slide ) {
+			return slide.classList.contains( 'is-active' );
+		} ) );
+		var timer = null;
+
+		function show( index ) {
+			current = ( index + slides.length ) % slides.length;
+
+			slides.forEach( function ( slide, i ) {
+				slide.classList.toggle( 'is-active', i === current );
+			} );
+
+			dots.forEach( function ( dot, i ) {
+				var active = i === current;
+				dot.classList.toggle( 'is-active', active );
+
+				if ( active ) {
+					dot.setAttribute( 'aria-current', 'true' );
+				} else {
+					dot.removeAttribute( 'aria-current' );
 				}
+			} );
+		}
+
+		function stop() {
+			if ( timer ) {
+				window.clearInterval( timer );
+				timer = null;
+			}
+		}
+
+		function start() {
+			stop();
+
+			if ( reducedMotion() ) {
+				return;
 			}
 
-			dots.forEach(function (dot, index) {
-				dot.addEventListener('click', function () { show(index); start(); });
-			});
-			carousel.addEventListener('mouseenter', stop);
-			carousel.addEventListener('mouseleave', start);
-			carousel.addEventListener('focusin', stop);
-			carousel.addEventListener('focusout', start);
-			start();
-		});
-	});
-}());
+			timer = window.setInterval( function () {
+				show( current + 1 );
+			}, AUTOPLAY_MS );
+		}
+
+		dots.forEach( function ( dot, i ) {
+			dot.addEventListener( 'click', function () {
+				show( i );
+				start();
+			} );
+		} );
+
+		hero.addEventListener( 'mouseenter', stop );
+		hero.addEventListener( 'mouseleave', start );
+		hero.addEventListener( 'focusin', stop );
+		hero.addEventListener( 'focusout', function ( event ) {
+			if ( ! hero.contains( event.relatedTarget ) ) {
+				start();
+			}
+		} );
+
+		document.addEventListener( 'visibilitychange', function () {
+			if ( document.hidden ) {
+				stop();
+			} else {
+				start();
+			}
+		} );
+
+		if ( window.matchMedia ) {
+			var query = window.matchMedia( '(prefers-reduced-motion: reduce)' );
+			var onChange = function () {
+				if ( query.matches ) {
+					stop();
+				} else {
+					start();
+				}
+			};
+
+			if ( query.addEventListener ) {
+				query.addEventListener( 'change', onChange );
+			} else if ( query.addListener ) {
+				query.addListener( onChange );
+			}
+		}
+
+		show( current );
+		start();
+	}
+
+	function boot() {
+		Array.prototype.forEach.call( document.querySelectorAll( '.pmc-hero' ), initHero );
+	}
+
+	if ( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', boot );
+	} else {
+		boot();
+	}
+}() );

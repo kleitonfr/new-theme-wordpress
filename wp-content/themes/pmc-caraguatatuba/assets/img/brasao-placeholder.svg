@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Brasão provisório">
+  <!--
+    IMAGEM PROVISÓRIA — substituir por assets/img/brasao.png (brasão oficial de Caraguatatuba).
+    Ver assets/img/README.md.
+  -->
+  <defs>
+    <clipPath id="pmcShield">
+      <path d="M64 22 L98 34 V66 C98 86 82 100 64 108 C46 100 30 86 30 66 V34 Z"/>
+    </clipPath>
+  </defs>
+
+  <circle cx="64" cy="64" r="62" fill="#00517A"/>
+  <circle cx="64" cy="64" r="56" fill="#002F47"/>
+
+  <path d="M64 22 L98 34 V66 C98 86 82 100 64 108 C46 100 30 86 30 66 V34 Z" fill="#F4F8FB"/>
+
+  <g clip-path="url(#pmcShield)">
+    <rect x="30" y="22" width="68" height="34" fill="#007BBB"/>
+    <path d="M30 62 q 12 -8 22 0 t 22 0 t 22 0 v 46 H30 Z" fill="#65A675" opacity="0.55"/>
+    <path d="M30 72 q 12 -8 22 0 t 22 0 t 22 0 v 36 H30 Z" fill="#00517A" opacity="0.75"/>
+    <circle cx="80" cy="38" r="7" fill="#F2CB05"/>
+  </g>
+
+  <path d="M64 22 L98 34 V66 C98 86 82 100 64 108 C46 100 30 86 30 66 V34 Z"
+        fill="none" stroke="#F2CB05" stroke-width="3"/>
+</svg>

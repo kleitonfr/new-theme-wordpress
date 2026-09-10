@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 128" width="1600" height="128" preserveAspectRatio="none" role="img" aria-label="Faixa decorativa provisória">
+  <!--
+    IMAGEM PROVISÓRIA — substituir por assets/img/banner-strip.jpg
+    (mosaico fotográfico da cidade com véu azul institucional).
+    Ver assets/img/README.md.
+  -->
+  <defs>
+    <linearGradient id="stripVeil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00517A" stop-opacity="0.86"/>
+      <stop offset="50%" stop-color="#007BBB" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#00517A" stop-opacity="0.80"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="128" fill="#00517A"/>
+
+  <g>
+    <rect x="0"    width="160" height="128" fill="#0E5F8C"/>
+    <rect x="160"  width="160" height="128" fill="#12719F"/>
+    <rect x="320"  width="160" height="128" fill="#0A5480"/>
+    <rect x="480"  width="160" height="128" fill="#166E97"/>
+    <rect x="640"  width="160" height="128" fill="#0D628E"/>
+    <rect x="800"  width="160" height="128" fill="#1A7AA6"/>
+    <rect x="960"  width="160" height="128" fill="#0B5A85"/>
+    <rect x="1120" width="160" height="128" fill="#15769F"/>
+    <rect x="1280" width="160" height="128" fill="#0E668F"/>
+    <rect x="1440" width="160" height="128" fill="#1B7FAB"/>
+  </g>
+
+  <g fill="#F9FAFA" opacity="0.16">
+    <path d="M40 108 l38 -44 26 30 18 -20 38 34 z"/>
+    <path d="M212 108 l30 -50 24 28 22 -18 34 40 z"/>
+    <path d="M372 108 l34 -38 22 26 26 -30 40 42 z"/>
+    <circle cx="560" cy="52" r="20"/>
+    <path d="M520 108 l40 -34 30 34 z"/>
+    <path d="M692 108 l36 -46 30 30 20 -16 30 32 z"/>
+    <path d="M852 108 l28 -40 26 26 24 -22 34 36 z"/>
+    <circle cx="1048" cy="48" r="16"/>
+    <path d="M1008 108 l40 -36 32 36 z"/>
+    <path d="M1172 108 l34 -44 24 28 22 -18 32 34 z"/>
+    <path d="M1332 108 l30 -38 26 24 22 -26 38 40 z"/>
+    <path d="M1492 108 l32 -42 28 28 20 -14 24 28 z"/>
+  </g>
+
+  <g stroke="#F9FAFA" stroke-opacity="0.10" stroke-width="2">
+    <path d="M160 0 V128 M320 0 V128 M480 0 V128 M640 0 V128 M800 0 V128 M960 0 V128 M1120 0 V128 M1280 0 V128 M1440 0 V128"/>
+  </g>
+
+  <rect width="1600" height="128" fill="url(#stripVeil)"/>
+</svg>
