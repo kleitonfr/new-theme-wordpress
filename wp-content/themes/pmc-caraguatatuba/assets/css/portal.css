@@ -516,19 +516,19 @@
 }
 
 .pmc-events__label {
-	flex: none;
-	display: flex;
-	align-items: center;
-	gap: var( --wp--preset--spacing--8 );
-	margin: 0;
-	padding: var( --wp--preset--spacing--20 ) var( --wp--preset--spacing--24 );
-	background-color: var( --wp--preset--color--secondary-600 );
-	color: var( --wp--preset--color--primary-900 );
-	font-family: var( --wp--preset--font-family--montserrat );
-	font-size: var( --wp--preset--font-size--14 );
-	font-weight: 700;
-	line-height: 1;
-	letter-spacing: 0.04em;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--8);
+    margin: 0;
+    padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--24);
+    background-color: var(--wp--preset--color--quaternary-600);
+    color: white;
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: var(--wp--preset--font-size--14);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
 }
 
 .pmc-events__icon {
@@ -538,6 +538,18 @@
 .pmc-events__nav {
 	flex: 1 1 auto;
 	min-width: 0;
+	overflow: hidden;
+}
+
+.pmc-events__track {
+	display: flex;
+	align-items: center;
+	width: max-content;
+	animation: pmc-events-scroll 30s linear infinite;
+}
+
+.pmc-events__track:hover {
+	animation-play-state: paused;
 }
 
 .pmc-events__list {
@@ -547,13 +559,15 @@
 	margin: 0;
 	padding: var( --wp--preset--spacing--12 ) var( --wp--preset--spacing--24 );
 	list-style: none;
-	overflow-x: auto;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
 }
 
-.pmc-events__list::-webkit-scrollbar {
-	display: none;
+@keyframes pmc-events-scroll {
+	from {
+		transform: translateX( 0 );
+	}
+	to {
+		transform: translateX( -50% );
+	}
 }
 
 @media ( min-width: 1024px ) {
@@ -634,11 +648,11 @@
 	padding-block: calc( var( --pmc-hero-strip-h ) + var( --wp--preset--spacing--48 ) )
 		var( --wp--preset--spacing--80 );
 	background-color: var( --wp--preset--color--bg-primary );
-	background-image: var( --pmc-img-hero-artwork );
 	background-size: cover;
 	background-position: center right;
 	background-repeat: no-repeat;
 }
+
 
 @media ( min-width: 640px ) {
 	.pmc-hero {
@@ -650,8 +664,38 @@
 	.pmc-hero {
 		min-height: 680px;
 		padding-block: calc( var( --pmc-hero-strip-h ) + var( --wp--preset--spacing--72 ) )
-			var( --wp--preset--spacing--80 );
+		var( --wp--preset--spacing--80 );
 	}
+}
+
+
+.pmc-hero__campaigns {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.pmc-hero__campaign {
+	position: absolute;
+	inset: 0;
+	display: none;
+	background-size: cover;
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+.pmc-hero__campaign.is-active {
+	display: block;
+}
+
+.pmc-hero__shapes {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	background-image: var( --pmc-img-hero-artwork );
+	background-size: cover;
+	background-position: center right;
+	background-repeat: no-repeat;
 }
 
 .pmc-hero__strip {
@@ -668,6 +712,7 @@
 
 .pmc-hero__veil {
 	position: absolute;
+	margin-block-start: 0;
 	inset: 0;
 	z-index: 2;
 	background-image: linear-gradient(
@@ -712,6 +757,7 @@
 	padding: var( --wp--preset--spacing--8 ) var( --wp--preset--spacing--20 );
 	border-radius: var( --wp--custom--radius--pill );
 	font-family: var( --wp--preset--font-family--montserrat );
+	color: white !important;
 	font-weight: 700;
 	line-height: 1.2;
 	letter-spacing: 0.06em;
@@ -736,18 +782,17 @@
 }
 
 .pmc-hero__cta .wp-block-button__link {
-	display: inline-flex;
-	align-items: center;
-	gap: var( --wp--preset--spacing--8 );
-	padding: var( --wp--preset--spacing--16 ) var( --wp--preset--spacing--32 );
-	font-family: var( --wp--preset--font-family--montserrat );
-	font-size: var( --wp--preset--font-size--18 );
-	font-weight: 700;
-	line-height: 1.2;
-	box-shadow: 0 8px 24px var( --pmc-cta-shadow );
-	transition: background-color 0.18s ease, transform 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+	background-color: var(--wp--preset--color--secondary-600) !important;
+    gap: var(--wp--preset--spacing--8);
+    padding: var(--wp--preset--spacing--16) var(--wp--preset--spacing--32);
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: var(--wp--preset--font-size--18);
+    font-weight: 700;
+    line-height: 1.2;
+    transition: background-color 0.18s ease, transform 0.18s ease;
 }
-
 .pmc-hero__cta .wp-block-button__link::after {
 	content: "\2192"; /* → */
 	font-size: var( --wp--preset--font-size--18 );
@@ -838,5 +883,9 @@
 
 	.pmc-hero__cta .wp-block-button__link:hover {
 		transform: none;
+	}
+
+	.pmc-events__track {
+		animation: none;
 	}
 }

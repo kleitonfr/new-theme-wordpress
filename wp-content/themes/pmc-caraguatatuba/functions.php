@@ -86,3 +86,4 @@ function pmc_caraguatatuba_pattern_category(): void {
 	);
 }
 add_action( 'init', 'pmc_caraguatatuba_pattern_category' );
+
